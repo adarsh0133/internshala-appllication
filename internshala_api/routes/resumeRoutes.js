@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const {
-  resume,
   addEducation,
   editEducation,
   deleteEducation,
@@ -14,6 +13,7 @@ const {
   addResponsibilities,
   editResponsibilities,
   deleteResponsibilities,
+  resume,
 } = require("../controllers/resumeControllers");
 const { isAuthenticated } = require("../middlewares/auth");
 

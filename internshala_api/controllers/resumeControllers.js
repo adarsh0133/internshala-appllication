@@ -4,8 +4,8 @@ const errorHandler = require("../utils/errorHandler");
 const { v4: uuidv4 } = require("uuid");
 
 exports.resume = catchAsyncErrors(async (req, res, next) => {
-  const { resume } = await Student.findById(req.id).exec();
-  res.json({ message: "resume page", resume });
+  const loggedinuserresume = await Student.findById(req.id).populate().exec();
+  res.json({ message: "resume page", loggedinuserresume });
 });
 
 // Add Edit Delete Education ----------

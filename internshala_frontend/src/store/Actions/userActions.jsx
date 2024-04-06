@@ -58,3 +58,11 @@ export const applyjob = (jobId) => async (dispatch) => {
   }
 };
 
+export const asyncupdate = (formData , id) => async (dispatch) => {
+  try {
+    await axios.post(`/student/update/${id}`, formData);
+    dispatch(asynccurrentUser());
+  } catch (error) {
+    console.log(error.response.data);
+  }
+}
